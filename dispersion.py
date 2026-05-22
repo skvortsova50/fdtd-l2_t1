@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 N_lambda = np.linspace(2, 20, 100)  # починати не з нуля!
 
 # Набір значень S
-S_values = [0.7, 0.9, 0.95, 0.99, 1.0]
+S_values = [0.1, 0.3, 0.5, 0.7, 0.85]
 
 def v_of_N_4th(Nl, S):
     term = ((4/3) * np.sin(np.pi / Nl)**2 - (1/12) * np.sin(2 * np.pi / Nl)**2)

@@ -110,7 +110,7 @@ x_dim = 200
 time_tot = 400
 c = 1.0
 dx = 1.0
-S = 1
+S = 0.5
 
 source_pos = x_dim // 2
 obs_probe = int(0.75 * x_dim)

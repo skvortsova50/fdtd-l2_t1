@@ -81,11 +81,14 @@ class FDTD1D:
         up = self.u_past
         uf = self.u_future
 
-        uf[1:-1] = (2*u[1:-1] - up[1:-1] +
-                    self.S**2 * (u[2:] - 2*u[1:-1] + u[:-2]))
+       uf[2:-2] = (2 * u[2:-2] - up[2:-2] + 
+                   (self.S**2 / 12) * (-u[4:] + 16 * u[3:-1] - 30 * u[2:-2] + 16 * u[1:-3] - u[:-4]))
 
-        uf[0] = 0
-        uf[-1] = 0
+
+uf[0] = 0
+uf[1] = 0
+uf[-1] = 0
+uf[-2] = 0
 
         if self.t_step < self.record_stop_time:
             self.signal_obs[self.t_step] = u[self.obs_probe]
